@@ -1,0 +1,70 @@
+JFS possui tags que vão ser transformadas em HTML puro.
+
+Namespaces JSF:
+- xmlns:h --> referência as tags HTML
+- xmlns:ui --> ligado a templates
+- xmlns:f --> internacionalização, ajax e drop down
+- xmlns:p --> biblioteca do prime faces
+ 
+ 
+concatenação em JSF --> nome += sobrenome
+
+Palavras reservadas:
+and, or, not, eq, ne, lt, gt, le, ge, true, false, null, instanceof, empty, div, mod
+
+Beans - são os controllers no JSF
+- anotação @Named --> serve para dizer que uma classe é um managed bean (Bean gerenciável)
+
+Difereça entre Web Application: Archive e Exploded
+- Com o Exploded voce pode salvar alterações no arquivo sem precisar reiniciar o servidor(Hot deploy)
+
+Hot deploy - algumas coisas podem ser alteradas sem ter que reiniciar o servidor para serem apresentadas
+- alterações na view
+- modificações em uma classe java apenas no corpo de um método
+- quaisquer outras alterações, deverão contar com o reinício do servidor
+
+
+**EXPRESSION LANGUAGE**
+- pegar um valor ou colocar um valor dentro do Bean 
+- JSP ${valor} - permite apenas fazer a leitura de dados, exibir os dados
+- JSF #{valor} - permite fazer tanto a leitura como a escrita de valores, ou seja, serão chamados tanto os gets como os sets
+
+Operações Lógicas:
+and - &&
+or - ||
+not - !
+eq - ==
+ne - !=
+lt - <
+gt - >
+le - <=
+ge - >=
+true - verdadeiro (1)
+false - falso (0)
+null - nulo
+instanceof - 
+empty - 
+div - divisão
+mod - resto
+
+Coleções
+Diferença entre:
+- action: espera uma String como retorno, essa String é o nome da página que você desejar ir quando executar o método
+- actionListener: não espera nenhum tipo de retorno, vai executar, mas retornará void
+
+*CSS e Javascript em JSF*
+atributos
+- style --> para colocar CSS puro
+- styleClass --> para coloca uma classe CSS
+
+*Esconder a exibição de elementos da tela*
+@ViewScoped - enquanto o usuário estiver na página, os estados dos objetos devem ser mantidos, por mais que o usuário faça requisições
+
+Requisição AJAX 
+- requisição parcial, carregará apenas parte do Bean, somente o que for pedido na requisição
+- o retorno sempre será void
+- ATENÇÃO: - uso da tag head
+	     - anotação @ViewScoped
+	     - ui:fragment n renderiza html, funciona como um if
+
+

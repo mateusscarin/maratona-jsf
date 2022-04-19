@@ -1,0 +1,3 @@
+br\com\maratonajsf\model\Estudante.class
+br\com\maratonajsf\model\enums\Turno.class
+br\com\maratonajsf\bean\estudante\EstudanteRegistrarBean.class
