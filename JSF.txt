@@ -60,11 +60,14 @@ atributos
 *Esconder a exibição de elementos da tela*
 @ViewScoped - enquanto o usuário estiver na página, os estados dos objetos devem ser mantidos, por mais que o usuário faça requisições
 
-Requisição AJAX 
+*Requisição AJAX*
 - requisição parcial, carregará apenas parte do Bean, somente o que for pedido na requisição
 - o retorno sempre será void
 - ATENÇÃO: - uso da tag head
 	     - anotação @ViewScoped
 	     - ui:fragment n renderiza html, funciona como um if
+
+ 
+*Lambdas*
 
 

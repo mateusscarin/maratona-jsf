@@ -4,11 +4,14 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Maratona JSF</title> 
     </h:head>
     <h:body>
+        
+        <c:set var="numerosList" value="#{[1,2,3,4,5,6,7,8,9,10]}"/>
         <p:importEnum type="javax.faces.application.ProjectStage" var="JsfProjectStages" allSuffix="ALL_ENUM_VALUES"/>
         <h:outputLabel value="Hello World"/><br/>
         <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome}"/>
@@ -76,7 +79,7 @@
             <h:outputLabel value="#{nome}" style="color: #{status.index mod 2 == 0 ? 'blue': 'red'}"/><br/>
         </ui:repeat>
 
-        <h:button value="Aletar Nome" onclick="alertNome('#{estudanteRegistrarBean.estudante.nome}')"/>
+        <h:button value="Alertar Nome" onclick="alertNome('#{estudanteRegistrarBean.estudante.nome}')"/>
 
         <br/>
         <h:form id="form">
@@ -114,6 +117,43 @@
                 <h:outputText value="#{estudanteRegistrarBean.mostrarLink}"/>
             </h:panelGroup>
         </h:form>
+
+        <!-- Lambdas -->
+        #{(soma -> soma +num)(10)}<br/>
+        #{((v1, v2, v3) -> v1*v2*v3)(1,5,10)}<br/>
+        #{(x -> x*x*x)(2)}<br/>
+        #{cubo=(x -> x*x*x); cubo(2)}<br/>
+        #{cubo(10)}
+
+        <h:form>
+            <h:commandButton value="Calcular Cubo" actionListener="#{estudanteRegistrarBean.calcularCubo((x -> x*x*x), 4)}"/>
+        </h:form>
+
+        <!-- List -->
+        <ui:repeat value="#{['Peaky', 'Blinders']}" var="mensagem">
+            #{mensagem}
+        </ui:repeat><br/>
+
+        <!-- Set -->
+        <ui:repeat value="#{{'Peaky', 'Blinders','Blinders', 'blinders'}}" var="mensagem">
+            #{mensagem}
+        </ui:repeat><br/>
+
+        <!-- Map -->
+        <ui:repeat value="#{{'Melhor personagem':'Tobey Shelby', 'Pior personagem':'Michael Shelby', 'Melhor série':'Peaky Blinders'}}" var="mensagem">
+            <ui:repeat value="#{mensagem}" var="entry">
+                #{entry.key} - #{entry.value}
+            </ui:repeat>
+        </ui:repeat><br/>
+
+        <!-- Stream -->
+        <ui:repeat value="#{numerosList.stream().filter(v-> v>4).toList()}" var="result">
+            #{result}
+        </ui:repeat><br/>
+
+        #{numerosList.stream().average().get()}<br/>
+        #{numerosList.stream().sum()}
+
     </h:body>
     <script>
         function alertNome(nome) {
@@ -121,4 +161,3 @@
         }
     </script>
 </html>
-
