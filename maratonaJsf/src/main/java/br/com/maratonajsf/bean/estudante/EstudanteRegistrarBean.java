@@ -18,7 +18,7 @@ import javax.inject.Named;
 public class EstudanteRegistrarBean implements Serializable {
 
     private Estudante estudante = new Estudante();
-    private String[] nomesArray = {"Peaky", "Blinders"};
+    private String[] nomesArray = {"Peaky", "Blinders!!!"};
     private List<String> nomesList = asList("Mateus", "Jorge", "Silvio", "Pablo");
     private Set<String> nomesSet = new HashSet<>(asList("Gustavo", "Jão", "Gabriel", "Mateus"));
     private Map<String, String> nomesMap = new HashMap<>();
