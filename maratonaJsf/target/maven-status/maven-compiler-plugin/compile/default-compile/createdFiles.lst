@@ -1,5 +1,6 @@
 br\com\maratonajsf\model\Estudante.class
 br\com\maratonajsf\model\enums\Turno.class
+br\com\maratonajsf\bean\flow\TesteFlowBean.class
 br\com\maratonajsf\bean\request\TesteRequestBean.class
 br\com\maratonajsf\bean\view\TesteViewBean.class
 br\com\maratonajsf\bean\application\TesteApplicationBean.class
