@@ -24,11 +24,23 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
     <flow-definition id="registration">
+        <start-node>registrationInicio</start-node>
+        <view id="registrationInicio">
+            <vdl-document>/registration/registration1.xhtml</vdl-document>
+        </view>
+        <switch id="registrationPage2">
+            <case>
+                <if>#{not empty testeFlowBean.nome and not empty testeFlowBean.sobrenome}</if>
+                <from-outcome>registration2</from-outcome>
+            </case>
+            <default-outcome>registrationInicio</default-outcome>
+        </switch>
         <flow-return id="exitToInicio">
             <from-outcome>/inicioflow.xhtml</from-outcome>
         </flow-return>
         <flow-return id="exitToIndex">
             <from-outcome>/index.xhtml</from-outcome>
         </flow-return>
+        <finalizer>#{testeFlowBean.salvar()}</finalizer>
     </flow-definition>
 </faces-config>
