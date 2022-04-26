@@ -1,4 +1,5 @@
 br\com\maratonajsf\model\enums\Turno.class
+br\com\maratonajsf\bean\dependent\TesteDependentBean.class
 br\com\maratonajsf\bean\request\TesteRequestBean.class
 br\com\maratonajsf\bean\application\TesteApplicationBean.class
 br\com\maratonajsf\flowbuilder\NewPendenciesFlowBuilder.class
