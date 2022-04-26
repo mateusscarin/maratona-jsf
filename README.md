@@ -139,24 +139,47 @@ São elas:
 	
 	pq se implemta o serializable, porque muitos containers requerem que os beans sejam serializáveis
 
-SessionScoped
+*@SessionScoped*
 - tudo ficará vivo enquanto a sessão estiver ativa
 - se perde a sessão quando fecha o navegador ou quando chama-se um método que invalida a sessão
 - Quando utilizar:
 	- quando um determinado atributo necessitar ser utilizado em outras páginas e outros beans 
 	- Ex: logins, carrinho de compras...
 
-
-ViewScoped
+*@ViewScoped*
 - objetos ficam vivos enquanto permanecer na mesma aba
 - abrir nova aba, os objetos morrem
 
 
-ApplicationScoped
+*@ApplicationScoped*
 - Objetos ficam vivos enquanto a API está rodando 
 - será executado apenas uma vez (quando o servidor for iniciado)
 - qualquer página pode acessar informações
 
+*@FlowScoped*
+- Objetos ficam vivos enquanto o usuário permanecer na navegação do Flow
+- apenas as páginas do flow podem acesssar informações
+
 @PostConstruct
 - inicializar atributos no momento da criação
-- método com essa anotação vai ser executado após os atributos do construtor serem inicializados, executado pelo container  
+- método com essa anotação vai ser executado após os atributos do construtor serem inicializados, executado pelo container
+
+@Dependent
+- Scopo padrão
+- Criado e destruído todas as vezes que é chamado
+- fica vivo de acordo com o escopo que for injetado
+
+
+Injeção de Beans
+- usa-se a anotação @Inject para fazer injeções em Beans
+- pode-se injetar dentro de um escopo outro escopo que seja mais abrangente 
+- Ex: @RequestScoped --> ApplicationScoped, SessionScoped, RequestScoped e Dependent
+
+@ViewScoped -->  ApplicationScoped, SessionScoped, RequestScoped* e Dependent
+
+@RequestScoped --> toda vez que esse request scoped for chamado, os atributos serão criados novamente
+
+@SessionScoped --> ApplicationScoped, SessionScoped e Dependent
+
+@ApplicationScoped --> Dependent
+
