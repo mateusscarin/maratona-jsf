@@ -1,9 +1,11 @@
 br\com\maratonajsf\model\enums\Turno.class
 br\com\maratonajsf\bean\dependent\TesteDependentBean.class
 br\com\maratonajsf\bean\request\TesteRequestBean.class
+br\com\maratonajsf\filter\LoginFilter.class
 br\com\maratonajsf\bean\application\TesteApplicationBean.class
 br\com\maratonajsf\flowbuilder\NewPendenciesFlowBuilder.class
 br\com\maratonajsf\flowbuilder\NewRegistrationFlowBuilder.class
+br\com\maratonajsf\bean\login\LoginBean.class
 br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderNestedBean.class
 br\com\maratonajsf\model\Estudante.class
 br\com\maratonajsf\bean\flow\TesteFlowBean.class

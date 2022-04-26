@@ -7,7 +7,7 @@ import javax.inject.Named;
 @Named
 public class Estudante implements Serializable {
 
-    private String nome = "Michael";
+    private String nome = "Mateus";
     private String sobrenome = "Shelby";
     private double nota1 = 20;
     private double nota2;
