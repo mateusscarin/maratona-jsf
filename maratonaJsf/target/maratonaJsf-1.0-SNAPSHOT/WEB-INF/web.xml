@@ -18,8 +18,16 @@
             30
         </session-timeout>
     </session-config>
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>br.com.maratonajsf.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/faces/restricted/*</url-pattern>
+    </filter-mapping>
     <welcome-file-list>
-        <welcome-file>faces/inicioflow.xhtml</welcome-file>
+        <welcome-file>faces/login.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
