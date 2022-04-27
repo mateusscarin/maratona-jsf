@@ -12,9 +12,11 @@
         <f:metadata>
             <f:viewParam name="nome" value="#{comunicacaoTeste3Bean.nome}"/>
             <f:viewParam name="sobrenome" value="#{comunicacaoTeste3Bean.sobrenome}"/>
+            <f:viewParam name="data" value="#{comunicacaoTeste3Bean.data}">
+                <f:convertDateTime pattern="dd-MM-yyyy"/>
+            </f:viewParam>
             <!--<f:event type="preRenderView" listener="{#comunicacaoTeste3Bean.init()}"/>-->
             <f:viewAction action="#{comunicacaoTeste3Bean.init()}"/>
-            
         </f:metadata>
 
         <o:form includeRequestParams="true">
@@ -26,6 +28,7 @@
                     <f:ajax event="blur"/>
                 </h:inputText>
                 <h:inputText value="#{comunicacaoTeste3Bean.sobrenome}"/>
+                <h:outputLabel value="#{comunicacaoTeste3Bean.data}"/>
                 <h:commandButton value="Resultado" action="#{comunicacaoTeste3Bean.save()}"/>
             </h:panelGrid>
         </o:form>
