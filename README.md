@@ -183,3 +183,8 @@ Injeção de Beans
 
 @ApplicationScoped --> Dependent
 
+Definindo variáveis globais no sistema
+- Usando xml
+- Usando ApplicationScope
+
+f:attribute --> adiciona atributos aos componetes, busca atributos dentro do Bean
