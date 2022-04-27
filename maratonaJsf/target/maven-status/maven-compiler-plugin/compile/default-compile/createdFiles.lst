@@ -15,6 +15,8 @@ br\com\maratonajsf\bean\view\TesteViewBean.class
 br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste3Bean.class
 br\com\maratonajsf\bean\conversation\TesteConversationBean.class
+br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste4Bean.class
 br\com\maratonajsf\bean\flow\TesteFlowNestedBean.class
+br\com\maratonajsf\bean\comunicacao\ComunicacaoResultadoTesteBean.class
 br\com\maratonajsf\bean\estudante\EstudanteRegistrarBean.class
 br\com\maratonajsf\bean\session\TesteSessionBean.class
