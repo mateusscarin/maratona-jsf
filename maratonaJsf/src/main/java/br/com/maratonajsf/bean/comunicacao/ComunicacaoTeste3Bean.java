@@ -1,6 +1,7 @@
 package br.com.maratonajsf.bean.comunicacao;
 
 import java.io.Serializable;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -12,9 +13,11 @@ public class ComunicacaoTeste3Bean implements Serializable{
     private String sobrenome;
 
     public void init() {
+//        if(!FacesContext.getCurrentInstance().isPostback()){
         System.out.println("criou comunicacao 3");
         System.out.println(nome);
         System.out.println(sobrenome);
+//        }
     }
 
     public String save(){
