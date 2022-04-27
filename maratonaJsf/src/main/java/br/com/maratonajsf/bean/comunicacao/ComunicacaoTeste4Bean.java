@@ -17,11 +17,9 @@ public class ComunicacaoTeste4Bean implements Serializable{
         String nome = (String) event.getComponent().getAttributes().get("nome");
         String adjetivo = (String) event.getComponent().getAttributes().get("adjetivo");
         Estudante estudante = (Estudante) event.getComponent().getAttributes().get("estudante");
-        String test = (String) event.getComponent().getAttributes().get("test");
         System.out.println(nome);
         System.out.println(adjetivo);
         System.out.println(estudante.getNome());
-        System.out.println(test);
     }
 
     public String getButtonName() {
