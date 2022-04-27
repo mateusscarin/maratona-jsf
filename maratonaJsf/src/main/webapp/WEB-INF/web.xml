@@ -27,10 +27,10 @@
         <url-pattern>/faces/restricted/*</url-pattern>
     </filter-mapping>
     <welcome-file-list>
-        <welcome-file>faces/login.xhtml</welcome-file>
+        <welcome-file>faces/comunicacao.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
-        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
-        <param-value>true</param-value>
+        <param-name>images.location</param-name>
+        <param-value>C:/var</param-value>
     </context-param>
 </web-app>
