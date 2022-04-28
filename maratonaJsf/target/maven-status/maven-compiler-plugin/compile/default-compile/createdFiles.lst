@@ -6,6 +6,7 @@ br\com\maratonajsf\flowbuilder\NewPendenciesFlowBuilder.class
 br\com\maratonajsf\flowbuilder\NewRegistrationFlowBuilder.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste6Bean.class
 br\com\maratonajsf\bean\login\LoginBean.class
+br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste9Bean.class
 br\com\maratonajsf\model\Estudante.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste2Bean.class
 br\com\maratonajsf\bean\flow\TesteFlowBean.class
@@ -17,6 +18,7 @@ br\com\maratonajsf\bean\dependent\TesteDependentBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste7Bean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste1Bean.class
 br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderNestedBean.class
+br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste8Bean.class
 br\com\maratonajsf\bean\view\TesteViewBean.class
 br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste3Bean.class
