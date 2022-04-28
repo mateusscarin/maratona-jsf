@@ -27,7 +27,7 @@
         <url-pattern>/faces/restricted/*</url-pattern>
     </filter-mapping>
     <welcome-file-list>
-        <welcome-file>faces/comunicacao8.xhtml</welcome-file>
+        <welcome-file>faces/comunicacao10.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
         <param-name>images.location</param-name>

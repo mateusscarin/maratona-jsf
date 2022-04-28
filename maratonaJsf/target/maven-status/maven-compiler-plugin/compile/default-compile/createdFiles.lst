@@ -9,6 +9,7 @@ br\com\maratonajsf\bean\login\LoginBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste9Bean.class
 br\com\maratonajsf\model\Estudante.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste2Bean.class
+br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste10Bean.class
 br\com\maratonajsf\bean\flow\TesteFlowBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste4Bean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoResultadoTesteBean.class
