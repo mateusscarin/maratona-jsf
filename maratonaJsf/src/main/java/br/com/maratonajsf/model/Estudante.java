@@ -27,9 +27,9 @@ public class Estudante implements Serializable {
     }
 
     public static List<Estudante> estudanteList(){
-        return new ArrayList<>(asList(new Estudante("Michael", "Shelby", 6),
-                new Estudante("Tomas", "Shelby", 10),
-                new Estudante("Arthur", "Shelby", 9.5)));
+        return new ArrayList<>(asList(new Estudante("Michael", "Ruim", 6),
+                new Estudante("Tomas", "Excelente", 10),
+                new Estudante("Arthur", "Doido", 9.5)));
     }
     
     public String getNome() {
