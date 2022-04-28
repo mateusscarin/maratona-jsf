@@ -2,6 +2,9 @@ package br.com.maratonajsf.model;
 
 import br.com.maratonajsf.model.enums.Turno;
 import java.io.Serializable;
+import java.util.ArrayList;
+import static java.util.Arrays.asList;
+import java.util.List;
 import javax.inject.Named;
 
 @Named
@@ -14,10 +17,25 @@ public class Estudante implements Serializable {
     private double nota3 = 10;
     private Turno turno = Turno.MATUTINO;
 
+    public Estudante() {
+    }
+
+    public Estudante(String nome, String sobrenome, double nota1) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.nota1 = nota1;
+    }
+
+    public static List<Estudante> estudanteList(){
+        return new ArrayList<>(asList(new Estudante("Michael", "Ruim", 6),
+                new Estudante("Tomas", "Excelente", 10),
+                new Estudante("Arthur", "Doido", 9.5)));
+    }
+    
     public String getNome() {
         return nome;
     }
-
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
