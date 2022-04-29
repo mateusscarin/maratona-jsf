@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Login</title>
     </h:head>
@@ -15,7 +16,10 @@
                 <h:outputLabel value="Nome"/>
                 <h:inputText value="#{loginBean.nome}" required="true" requiredMessage="Campo nome é obrigatório"/>
                 <h:outputLabel value="Senha"/>
-                <h:inputText value="#{loginBean.senha}" required="true" requiredMessage="Campo senha é obrigatório"/>
+                <h:inputSecret value="#{loginBean.senha}" required="true" requiredMessage="Campo senha é obrigatório"/>
+                <h:selectOneMenu value="#{loginBean.language}">
+                    <f:selectItems value="#{loginBean.localeList}" var="locale" itemValue="#{locale.language}" itemLabel="#{locale.displayLanguage}"/>
+                </h:selectOneMenu>
                 <h:commandButton value="Logar" action="#{loginBean.logar()}"/>
             </h:panelGrid>
         </h:form>

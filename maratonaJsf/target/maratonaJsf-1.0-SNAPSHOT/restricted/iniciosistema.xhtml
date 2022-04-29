@@ -2,14 +2,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Login</title>
     </h:head>
-    <h:body>
-        <h:form>
-            <h1>Usuario logado: #{loginBean.estudante.nome}</h1>
-            <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
-        </h:form>
-    </h:body>
+    <f:view locale="#{loginBean.language}">
+        <h:outputText value="#{loginBean.language}"/>
+        <h:body>
+            <h:form>
+                <h1>#{msg.userLogged} #{loginBean.estudante.nome}</h1>
+                <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+            </h:form>
+        </h:body>
+    </f:view>
 </html>
