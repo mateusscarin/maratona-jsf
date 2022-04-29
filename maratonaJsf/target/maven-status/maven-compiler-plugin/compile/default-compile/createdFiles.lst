@@ -16,11 +16,13 @@ br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste4Bean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoResultadoTesteBean.class
 br\com\maratonajsf\bean\session\TesteSessionBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste5Bean.class
+br\com\maratonajsf\validators\DuplicatedEmailValidator.class
 br\com\maratonajsf\bean\dependent\TesteDependentBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste7Bean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste1Bean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste11Bean.class
 br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderNestedBean.class
+br\com\maratonajsf\bean\validator\ValidatorTesteBean.class
 br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste8Bean.class
 br\com\maratonajsf\bean\view\TesteViewBean.class
 br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderBean.class

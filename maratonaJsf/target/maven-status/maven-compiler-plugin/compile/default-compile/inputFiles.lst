@@ -1,6 +1,7 @@
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste10Bean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\request\TesteRequestBean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\filter\LoginFilter.java
+C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\validator\ValidatorTesteBean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste5Bean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\flow\TesteFlowBean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderBean.java
@@ -23,6 +24,7 @@ C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\b
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste4Bean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\flowbuilder\TesteFlowBuilderNestedBean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\conversation\TesteConversationBean.java
+C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\validators\DuplicatedEmailValidator.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\bean\comunicacao\ComunicacaoTeste12Bean.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\flowbuilder\NewRegistrationFlowBuilder.java
 C:\Users\Home\Desktop\MaratonaJSF\maratonaJsf\src\main\java\br\com\maratonajsf\flowbuilder\NewPendenciesFlowBuilder.java
