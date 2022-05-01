@@ -188,3 +188,34 @@ Definindo variáveis globais no sistema
 - Usando ApplicationScope
 
 f:attribute --> adiciona atributos aos componetes, busca atributos dentro do Bean
+
+
+* Ciclo de vida no JSF*
+- Restore View -> verifica se é uma nova requisição ou se essa requisição já foi feita
+- Apply Request Value -> pega todos os parâmetros dos componentes e passa para o Process Validation
+- Process Valadation -> faz todas as validações (que n possuem Immediate=true), se todas derem certos vai para o Update Model
+- Update Model -> pega os componentes e vai settar no Bean
+- Invoke Application -> chama o método do Bean, onde o formulário realmente é submetido
+- Render Response -> onde o Bean é contruído, onde tudo vai ser criado
+OBS: se as validações falharem no Process Validation, redirecionará diretamente para a Render Response com as mensagens de erro
+
+*Nova requisição*
+Restore View -> Render Response
+- Cria a árvore de componentes (UIViewRoot)
+
+*Requisição que já existe*
+Formulário com ActionListener (retorno void)
+ - Restore View -> Apply Request Value -> Process Validation -> Update Model -> Invoke Application -> Render Response (atualizando a árvore de componentes)
+Formulário com Action (retorno String, encaminhando para uma nova página)
+ - Restore View -> Apply Request Value -> Process Validation -> Update Model -> Invoke Application -> Render Response (passa para outra view) -> Restore View -> Render Response
+
+*Immediate = true*
+- Quando utiiza-se esse atributo em componentes do tipo UIInput, as validações vão acontecer uma fase antes do que deveriam acontecer, validações são feitas no Apply Request Value
+- Quando utiliza-se esse atributo em componentes do tipo UICommand, as validações vão acontecer diretamente no Appy Request Value e pular todas as outras fases e indo diretamente para a Render Responde.
+- Quando utiliza-se esse atributo em componentes UIInput e UICommand, ambos são validados, porém todos os componetes UIInput que não possuírem Immediate=true serão completamente ignorados
+
+*Validação customizada com Validators*
+- Utilizando uma classe com todos os métodos de validações customizadas e chamando na view a validação desejada
+
+*Conversão Customizada com Converters*
+- 
