@@ -5,11 +5,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import static java.util.Arrays.asList;
 import java.util.List;
+import java.util.Objects;
 import javax.inject.Named;
 
 @Named
 public class Estudante implements Serializable {
 
+    private Integer id;
     private String nome = "Mateus";
     private String sobrenome = "Shelby";
     private double nota1 = 20;
@@ -21,22 +23,23 @@ public class Estudante implements Serializable {
     public Estudante() {
     }
 
-    public Estudante(String nome, String sobrenome, double nota1) {
+    public Estudante(Integer id, String nome, String sobrenome, double nota1) {
+        this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.nota1 = nota1;
     }
 
-    public static List<Estudante> estudanteList(){
-        return new ArrayList<>(asList(new Estudante("Michael", "Ruim", 6),
-                new Estudante("Tomas", "Excelente", 10),
-                new Estudante("Arthur", "Doido", 9.5)));
+    public static List<Estudante> estudanteList() {
+        return new ArrayList<>(asList(new Estudante(1, "Michael", "Ruim", 6),
+                new Estudante(2, "Tomas", "Excelente", 10),
+                new Estudante(3, "Arthur", "Doido", 9.5)));
     }
-    
+
     public String getNome() {
         return nome;
     }
-    
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -87,6 +90,39 @@ public class Estudante implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Estudante other = (Estudante) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
 
 }
