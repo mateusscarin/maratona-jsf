@@ -10,12 +10,20 @@ import javax.inject.Named;
 @ViewScoped
 public class ConverterTesteBean implements Serializable{
     
-    private List<Estudante> listEstudante = Estudante.estudanteList();
+    private List<Estudante> estudanteList = Estudante.estudanteList();
     private Estudante estudante;
     
     public void save(){
         System.out.println("Salvando");
         System.out.println(estudante);
+    }
+
+    public List<Estudante> getEstudanteList() {
+        return estudanteList;
+    }
+
+    public void setEstudanteList(List<Estudante> estudanteList) {
+        this.estudanteList = estudanteList;
     }
 
     public Estudante getEstudante() {
@@ -25,13 +33,4 @@ public class ConverterTesteBean implements Serializable{
     public void setEstudante(Estudante estudante) {
         this.estudante = estudante;
     }
-
-    public List<Estudante> getListEstudante() {
-        return listEstudante;
-    }
-
-    public void setListEstudante(List<Estudante> listEstudante) {
-        this.listEstudante = listEstudante;
-    }
-
 }
