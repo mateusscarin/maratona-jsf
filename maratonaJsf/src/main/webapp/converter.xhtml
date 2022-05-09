@@ -16,7 +16,7 @@
         <h:form>
             <h:selectOneMenu value="#{converterTesteBean.estudante}" 
                              converter="estudanteConverter" required="true" requiredMessage="Selecione um estudante">
-                <f:selectItem value="#{null}" itemLabel="Selecione um estudante..."/>
+                <f:selectItem value="#{null}" itemLabel="Selecione um estudante"/>
                 <f:selectItems value="#{converterTesteBean.estudanteList}"
                                var="listestudante" itemLabel="#{listestudante.nome}"
                                itemValue="#{listestudante}"/>
