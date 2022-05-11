@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -30,17 +31,35 @@ public class DataTableTesteBean implements Serializable {
     public void orderByNome(String ordem) {
         if (ordem.equals("asc")) {
             estudanteList.sort(Comparator.comparing(Estudante::getNome));
-        }else{
-        estudanteList.sort(Comparator.comparing(Estudante::getNome).reversed());
+        } else {
+            estudanteList.sort(Comparator.comparing(Estudante::getNome).reversed());
         }
     }
-    
-    public void orderBySobrenome(String ordem){
-    if (ordem.equals("asc")) {
+
+    public void orderBySobrenome(String ordem) {
+        if (ordem.equals("asc")) {
             estudanteList.sort(Comparator.comparing(Estudante::getSobrenome));
-        }else{
-        estudanteList.sort(Comparator.comparing(Estudante::getSobrenome).reversed());
+        } else {
+            estudanteList.sort(Comparator.comparing(Estudante::getSobrenome).reversed());
         }
+    }
+
+    public void remove(Estudante estudante) {
+        //Faz uma chamada para o banco
+        estudanteList.remove(estudante);
+    }
+
+    public void edit(Estudante estudante) {
+        estudante.setEditing(true);
+    }
+
+    public void save() {
+        estudanteList.forEach(estudante -> {
+            if (estudante.isEditing()) {
+                System.out.println(estudante);
+                estudante.setEditing(false);
+                }
+        });
     }
 
     public Map<String, Estudante> getMapEstudanteList() {

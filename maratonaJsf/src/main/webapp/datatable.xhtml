@@ -14,6 +14,7 @@
     </f:metadata>
 
     <h:body>
+        <p:importEnum type="br.com.maratonajsf.model.enums.Turno" var="Turno" allSuffix="ALL_ENUM_VALUES"/>
         <p:messages>
             <p:autoUpdate />
         </p:messages>
@@ -29,7 +30,8 @@
                             Nome desc
                         </h:commandLink>
                     </f:facet>
-                    <h:outputText value="#{estudantelista.nome}"/>
+                    <h:outputText value="#{estudantelista.nome}" rendered="#{not estudantelista.editing}"/>
+                    <h:inputText value="#{estudantelista.nome}" rendered="#{estudantelista.editing}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">
@@ -40,17 +42,35 @@
                             Sobrenome desc
                         </h:commandLink>
                     </f:facet>
-                    <h:outputText value="#{estudantelista.sobrenome}"/>
+                    <h:outputText value="#{estudantelista.sobrenome}" rendered="#{not estudantelista.editing}"/>
+                    <h:inputText value="#{estudantelista.sobrenome}" rendered="#{estudantelista.editing}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Turno</f:facet>
-                    <h:outputText value="#{estudantelista.turno}"/>
+                    <h:outputText value="#{estudantelista.turno}" rendered="#{not estudantelista.editing}"/>
+                    <h:selectOneMenu value="#{estudantelista.turno}" rendered="#{estudantelista.editing}">
+                        <f:selectItems  value="#{Turno.ALL_ENUM_VALUES}" var="turno" itemValue="#{turno}" itemLabel="#{turno}"/>
+                    </h:selectOneMenu>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Email</f:facet>
-                    <h:outputText value="#{estudantelista.email}"/>
+                    <h:outputText value="#{estudantelista.email}" rendered="#{not estudantelista.editing}"/>
+                    <h:inputText value="#{estudantelista.email}" rendered="#{estudantelista.editing}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink actionListener="#{dataTableTesteBean.remove(estudantelista)}" rendered= "#{not estudante.editing}">
+                        <h:outputText value="Remover"/>
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink actionListener="#{dataTableTesteBean.edit(estudantelista)}" rendered= "#{not estudante.editing}">
+                        <h:outputText value="Editar"/>
+                    </h:commandLink>
                 </h:column>
             </h:dataTable>
+            <h:commandButton value="Save" actionListener="#{dataTableTesteBean.save()}"/>
 
             <h:dataTable value="#{dataTableTesteBean.estudanteSet}" var="estudantelista">
                 <h:column>
