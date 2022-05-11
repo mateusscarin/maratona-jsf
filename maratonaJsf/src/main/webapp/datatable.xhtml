@@ -6,102 +6,136 @@
       xmlns:o="http://omnifaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Validator</title>
+        <title>Datatable</title>
     </h:head>
 
     <f:metadata>
         <f:viewAction action ="#{dataTableTesteBean.init()}"/>
     </f:metadata>
-    
+
     <h:body>
+        <p:importEnum type="br.com.maratonajsf.model.enums.Turno" var="Turno" allSuffix="ALL_ENUM_VALUES"/>
         <p:messages>
             <p:autoUpdate />
         </p:messages>
         <h:form>
-            
+
             <h:dataTable value="#{dataTableTesteBean.estudanteList}" var="estudantelista">
                 <h:column>
-                    <f:facet name="header">Nome</f:facet>
-                    <h:outputText value="#{estudantelista.nome}"/>
+                    <f:facet name="header">
+                        <h:commandLink actionListener="#{dataTableTesteBean.orderByNome('asc')}">
+                            Nome asc
+                        </h:commandLink>
+                        <h:commandLink actionListener="#{dataTableTesteBean.orderByNome('desc')}">
+                            Nome desc
+                        </h:commandLink>
+                    </f:facet>
+                    <h:outputText value="#{estudantelista.nome}" rendered="#{not estudantelista.editing}"/>
+                    <h:inputText value="#{estudantelista.nome}" rendered="#{estudantelista.editing}"/>
                 </h:column>
-                 <h:column>
-                    <f:facet name="header">Sobrenome</f:facet>
-                    <h:outputText value="#{estudantelista.sobrenome}"/>
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink actionListener="#{dataTableTesteBean.orderBySobrenome('asc')}">
+                            Sobrenome asc
+                        </h:commandLink>
+                        <h:commandLink actionListener="#{dataTableTesteBean.orderBySobrenome('desc')}">
+                            Sobrenome desc
+                        </h:commandLink>
+                    </f:facet>
+                    <h:outputText value="#{estudantelista.sobrenome}" rendered="#{not estudantelista.editing}"/>
+                    <h:inputText value="#{estudantelista.sobrenome}" rendered="#{estudantelista.editing}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Turno</f:facet>
-                    <h:outputText value="#{estudantelista.turno}"/>
+                    <h:outputText value="#{estudantelista.turno}" rendered="#{not estudantelista.editing}"/>
+                    <h:selectOneMenu value="#{estudantelista.turno}" rendered="#{estudantelista.editing}">
+                        <f:selectItems  value="#{Turno.ALL_ENUM_VALUES}" var="turno" itemValue="#{turno}" itemLabel="#{turno}"/>
+                    </h:selectOneMenu>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Email</f:facet>
-                    <h:outputText value="#{estudantelista.email}"/>
+                    <h:outputText value="#{estudantelista.email}" rendered="#{not estudantelista.editing}"/>
+                    <h:inputText value="#{estudantelista.email}" rendered="#{estudantelista.editing}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink actionListener="#{dataTableTesteBean.remove(estudantelista)}" rendered= "#{not estudante.editing}">
+                        <h:outputText value="Remover"/>
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink actionListener="#{dataTableTesteBean.edit(estudantelista)}" rendered= "#{not estudante.editing}">
+                        <h:outputText value="Editar"/>
+                    </h:commandLink>
                 </h:column>
             </h:dataTable>
-            
+            <h:commandButton value="Save" actionListener="#{dataTableTesteBean.save()}"/>
+
             <h:dataTable value="#{dataTableTesteBean.estudanteSet}" var="estudantelista">
                 <h:column>
                     <f:facet name="header">Nome</f:facet>
                     <h:outputText value="#{estudantelista.nome}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Sobrenome</f:facet>
                     <h:outputText value="#{estudantelista.sobrenome}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Turno</f:facet>
                     <h:outputText value="#{estudantelista.turno}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Email</f:facet>
                     <h:outputText value="#{estudantelista.email}"/>
                 </h:column>
             </h:dataTable>
-            
+
             <h:dataTable value="#{dataTableTesteBean.estudanteLinkedList}" var="estudantelista">
                 <h:column>
                     <f:facet name="header">Nome</f:facet>
                     <h:outputText value="#{estudantelista.nome}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Sobrenome</f:facet>
                     <h:outputText value="#{estudantelista.sobrenome}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Turno</f:facet>
                     <h:outputText value="#{estudantelista.turno}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Email</f:facet>
                     <h:outputText value="#{estudantelista.email}"/>
                 </h:column>
             </h:dataTable>
-            
+
             <h:dataTable value="#{dataTableTesteBean.mapEstudanteList.values()}" var="estudantelista">
                 <h:column>
                     <f:facet name="header">Nome</f:facet>
                     <h:outputText value="#{estudantelista.nome}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Sobrenome</f:facet>
                     <h:outputText value="#{estudantelista.sobrenome}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Turno</f:facet>
                     <h:outputText value="#{estudantelista.turno}"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">Email</f:facet>
                     <h:outputText value="#{estudantelista.email}"/>
                 </h:column>
             </h:dataTable>
-            
+
             <h:dataTable value="#{dataTableTesteBean.mapEstudanteList.keySet()}" var="string">
                 <h:column>
                     <f:facet name="header">Chave</f:facet>
                     <h:outputText value="#{string}"/>
                 </h:column>
             </h:dataTable>
-            
+
         </h:form>
     </h:body>
 </html>
