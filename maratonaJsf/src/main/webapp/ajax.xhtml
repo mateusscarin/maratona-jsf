@@ -12,8 +12,8 @@
             <h:panelGrid columns="1">
                 <h:inputText value="#{ajaxTesteBean.nome}" id="nome"/>
                 <h:inputText value="#{ajaxTesteBean.sobrenome}" id="sobrenome"/>
-                <h:commandButton value="Save" actionListener="#{ajaxTesteBean.toUpperCase()}">
-                    <f:ajax execute="@form" render="@form form2:sobrenomeOut2 outside"/>
+                <h:commandButton value="Save">
+                    <f:ajax execute="@form" listener="#{ajaxTesteBean.toUpperCase()}" render="@form form2:sobrenomeOut2 outside"/>
                 </h:commandButton>
                 <h:outputText value="#{ajaxTesteBean.nome}" id="nomeOut"/>
                 <h:outputText value="#{ajaxTesteBean.sobrenome}" id="sobrenomeOut"/>
