@@ -7,16 +7,21 @@
         <title>Ajax</title>
     </h:head>
     <h:body>
-        <h:form>
+        <h:outputText value="#{ajaxTesteBean.nome}" id="outside"/>
+        <h:form id="form">
             <h:panelGrid columns="1">
                 <h:inputText value="#{ajaxTesteBean.nome}" id="nome"/>
                 <h:inputText value="#{ajaxTesteBean.sobrenome}" id="sobrenome"/>
                 <h:commandButton value="Save" actionListener="#{ajaxTesteBean.toUpperCase()}">
-                    <f:ajax execute="nome sobrenome" render="nomeOut sobrenomeOut"/>
+                    <f:ajax execute="@form" render="@form form2:sobrenomeOut2 outside"/>
                 </h:commandButton>
                 <h:outputText value="#{ajaxTesteBean.nome}" id="nomeOut"/>
                 <h:outputText value="#{ajaxTesteBean.sobrenome}" id="sobrenomeOut"/>
             </h:panelGrid>
+        </h:form>
+        <h:form id="form2">
+            <h:outputText value="#{ajaxTesteBean.nome}" id="nomeOut2"/>
+            <h:outputText value="#{ajaxTesteBean.sobrenome}" id="sobrenomeOut2"/>
         </h:form>
     </h:body>
 </html>
