@@ -20,7 +20,8 @@ public class AjaxTesteBean implements Serializable {
     private String animeSelecionado;
     private String personagemSelecionado;
 
-    {
+    public void init() {
+        System.out.println("entrou");
         animePersonagensMap = new TreeMap<>();
         animePersonagensMap.put("Hellsing", asList("Alucard", "Seras", "Alexander"));
         animePersonagensMap.put("Attack on Titan", asList("Eren", "Mikasa", "Arimin"));

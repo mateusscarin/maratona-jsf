@@ -11,12 +11,17 @@
         <p:messages>
             <p:autoUpdate id="messages"/>
         </p:messages>
+        <h:outputText value="É uma requisição ajax? #{facesContext.postback}" id="postback"/>
+        <f:metadata>
+            <f:viewAction action="#{ajaxTesteBean.init()}"/>
+        </f:metadata>
         <h:form id="form">
             <h:panelGrid columns="1">
+                <f:ajax event="blur" render="postback">
                 <h:inputText value="#{ajaxTesteBean.email}" id="email" validator="#{validators.validateDuplicatedEmail}" required="true"/>
                 <h:inputText value="#{ajaxTesteBean.nome}" id="nome" required="true"/>
                 <h:commandButton value="Enviar"/>
-                    
+                  </f:ajax>  
             </h:panelGrid>
         </h:form>
     </h:body>
