@@ -27,7 +27,7 @@
         <url-pattern>/faces/restricted/*</url-pattern>
     </filter-mapping>
     <welcome-file-list>
-        <welcome-file>faces/viewexpired.xhtml</welcome-file>
+        <welcome-file>faces/datatable.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
         <param-name>images.location</param-name>
@@ -45,7 +45,7 @@
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>
         <location>/faces/expirederror.xhtml</location>
     </error-page>
-<!--    <context-param>
+    <!--    <context-param>
         <param-name>com.sun.faces.numberOfLogicalViews</param-name>
         <param-value>2</param-value>
     </context-param>
