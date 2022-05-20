@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!-- was: < -->?xml version="1.0" encoding="UTF-8>
+
+<facelet-taglib xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.opg/xml/ns/javaee/web"
+                version="2.2">
+    <description>Maratona JSF components</description>
+    <namespace>http://maratonajsf.com.br/components</namespace>
+    <short-name>ms</short-name>
+    <tag>
+        <tag-name>confirmDelete</tag-name>
+        <bahavior>
+            <behavior-id>confirm</behavior-id>
+        </bahavior>
+    </tag>
+</facelet-taglib>

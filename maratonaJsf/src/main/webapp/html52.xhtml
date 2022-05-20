@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head jsf:id="head"></head>
+    <body jsf:id="body">
+        <form jsf:id="form">
+            <p:messages>
+                <p:autoUpdate/>
+            </p:messages>
+            Email:<input jsf:id="email" jsf:value="#{html5TesteBean.email}" type="email" jsf:validator="#{validators.validateDuplicatedEmail}" required="required"/><br/>
+            URL:<input jsf:id="url" jsf:value="#{html5TesteBean.url}" type="url" required="required"/><br/>
+            Number:<input jsf:id="number" jsf:value="#{html5TesteBean.numero}" type="number"  required="required"/><br/>
+            
+            <h:inputText value="#{html5TesteBean.nome}">
+                <f:ajax event="blur" listener="#{html5TesteBean.toUpperCaseNome()}" render="@this"/>
+            </h:inputText>
+            <button jsf:actionListener="#{html5TesteBean.salvar()}">
+                Salvar
+            </button>
+        </form>
+    </body>
+
+
+</html>
+
