@@ -27,7 +27,7 @@
         <url-pattern>/faces/restricted/*</url-pattern>
     </filter-mapping>
     <welcome-file-list>
-        <welcome-file>faces/ajax3.xhtml</welcome-file>
+        <welcome-file>faces/viewexpired.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
         <param-name>images.location</param-name>
@@ -35,8 +35,16 @@
     </context-param>
     <context-param>
         <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
-        <param-value>client</param-value>
+        <param-value>server</param-value>
     </context-param>
+    <context-param>
+        <param-name>com.sun.faces.enableRestoreView11Compatibility</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <error-page>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/faces/expirederror.xhtml</location>
+    </error-page>
 <!--    <context-param>
         <param-name>com.sun.faces.numberOfLogicalViews</param-name>
         <param-value>2</param-value>
