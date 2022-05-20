@@ -27,7 +27,7 @@
         <url-pattern>/faces/restricted/*</url-pattern>
     </filter-mapping>
     <welcome-file-list>
-        <welcome-file>faces/beanvalidation.xhtml</welcome-file>
+        <welcome-file>faces/upload.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
         <param-name>images.location</param-name>
